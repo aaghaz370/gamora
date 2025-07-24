@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Game Hub</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff512f, 0 0 20px #ff512f;
+      }
+      to {
+        text-shadow: 0 0 20px #dd2476, 0 0 40px #dd2476;
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px 10px;
+      text-align: center;
+      transition: 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .card span {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      transform: rotate(0deg);
+      animation: rotate 6s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media(max-width: 600px){
+      .header { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">🎮 100+ Mini Games</div>
+
+  <div class="grid">
+    <!-- Sample with full custom path -->
+    <div class="card" onclick="openGame('game/tictactoe.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2076/2076261.png" />
+      <span>Tic Tac Toe</span>
+    </div>
+    <div class="card" onclick="openGame('cube/index.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/480/480382.png "/>
+      <span>Cube</span>
+    </div>
+    <div class="card" onclick="openGame('snake.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/3669/3669984.png" />
+      <span>Snake Game</span>
+    </div>
+    <div class="card" onclick="openGame('https://game11111.netlify.app/01-candy-crush-game/')">
+      <img src="https://cdn-icons-png.flaticon.com/512/929/929470.png" />
+      <span>Color Match</span>
+    </div>
+    <div class="card" onclick="openGame('snake.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" />
+      <span>Whack-a-Mole</span>
+    </div>
+    <div class="card" onclick="openGame('puzzle/slide.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/3261/3261399.png" />
+      <span>Puzzle Slide</span>
+    </div>
+    <div class="card" onclick="openGame('2048.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1589/1589590.png" />
+      <span>2048</span>
+    </div>
+    <div class="card" onclick="openGame('javascript-racer/index.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2095/2095061.png" />
+      <span>Catch Fruit</span>
+    </div>
+    <div class="card" onclick="openGame('space/index.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/4208/4208460.png" />
+      <span>Space Shooter</span>
+    </div>
+    <div class="card" onclick="openGame('brick.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1007/1007310.png" />
+      <span>Brick Breaker</span>
+    </div>
+    <div class="card" onclick="openGame('quiz/index.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" />
+      <span>Quiz Game</span>
+    </div>
+    <div class="card" onclick="openGame('maze/escape.html')">
+      <img src="https://cdn-icons-png.flaticon.com/512/4072/4072397.png" />
+      <span>Maze Escape</span>
+    </div>
+  </div>
+
+  <script>
+    function openGame(path) {
+      window.location.href = path;
+    }
+  </script>
+</body>
+</html>
